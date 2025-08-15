@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="contact_title">Contatos</string>
+    <string name="loading_contacts">Carregando Contatos...</string>
+</resources>

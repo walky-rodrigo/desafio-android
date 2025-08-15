@@ -1,0 +1,41 @@
+plugins {
+    alias(libs.plugins.android.library)
+    alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.kotlin.kapt)
+}
+
+android {
+    namespace 'com.picpay.desafio.android.data.common'
+
+    defaultConfig {
+        buildConfigField("String", "BASE_URL", "\"https://609a908e0f5a13001721b74e.mockapi.io/\"")
+    }
+
+    buildFeatures {
+        buildConfig = true
+    }
+
+    buildTypes {
+        debug {
+            buildConfigField "boolean", "ENABLE_LOGGING", "true"
+        }
+        release {
+            buildConfigField "boolean", "ENABLE_LOGGING", "false"
+        }
+    }
+}
+
+dependencies {
+    implementation project(":domain:common")
+    implementation libs.kotlin.std
+
+    implementation libs.dagger.hilt
+    kapt libs.dagger.hilt.compile
+
+    implementation libs.retrofit
+    implementation libs.retrofit.adapter
+    implementation libs.retrofit.gson
+    implementation libs.gson
+    implementation libs.okhttp3
+    implementation libs.okhttp3.interceptor
+}

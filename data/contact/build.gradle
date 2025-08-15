@@ -1,0 +1,41 @@
+plugins {
+    alias(libs.plugins.android.library)
+    alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.kotlin.kapt)
+    alias(libs.plugins.ksp)
+}
+
+android {
+    namespace 'com.picpay.desafio.android.data.contact'
+}
+
+dependencies {
+    implementation(project(":domain:contact"))
+    implementation(project(":domain:common"))
+    implementation(project(":data:common"))
+
+    implementation libs.kotlin.std
+
+    implementation libs.dagger.hilt
+    kapt libs.dagger.hilt.compile
+
+    implementation libs.room
+    implementation libs.room.ktx
+    ksp libs.room.compiler
+
+    implementation libs.retrofit
+    implementation libs.retrofit.adapter
+    implementation libs.retrofit.gson
+    implementation libs.gson
+    implementation libs.okhttp3
+
+
+    // tests
+
+    testImplementation libs.junit
+    testImplementation libs.androidx.junit
+    testImplementation libs.mockito.core
+    testImplementation libs.mockito.kotlin
+    testImplementation libs.coroutines.test
+    testImplementation libs.kotlin.test
+}

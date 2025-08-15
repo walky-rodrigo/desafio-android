@@ -1,0 +1,11 @@
+plugins {
+    alias(libs.plugins.android.library)
+    alias(libs.plugins.kotlin.android)
+}
+android {
+    namespace 'com.picpay.desafio.android.domain.common'
+}
+
+dependencies {
+    implementation libs.kotlin.std
+}

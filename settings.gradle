@@ -1,1 +1,7 @@
 include ':app'
+include ':data:contact'
+include ':domain:contact'
+include ':feature:contact'
+include ':core-ui'
+include ':data:common'
+include ':domain:common'
